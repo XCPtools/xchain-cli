@@ -1,0 +1,21 @@
+{
+    "name": "tokenly/xchain-cli",
+    "description": "A simple command line client for XChain",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Devon Weller",
+            "email": "devon@tokenly.co"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "XChainCLI\\": "local/"
+        }
+    },
+    "require": {
+        "symfony/console": "2.6.*",
+        "tokenly/xchain-client": "dev-master"
+    }
+}
