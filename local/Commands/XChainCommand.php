@@ -51,4 +51,17 @@ class XChainCommand extends Command {
         return $client;
     }
 
+    protected function formatBoolean($raw_input) {
+        if ($raw_input === true) { return true; }
+        switch (strtolower(substr($raw_input, 0, 1))) {
+            case 'y':
+            case 't':
+            case '1':
+                return true;
+        }
+
+        return false;
+    }
+
+
 }
