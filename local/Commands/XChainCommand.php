@@ -12,10 +12,13 @@ use Tokenly\XChainClient\Client;
 
 class XChainCommand extends Command {
 
+    protected $name        = null;
+    protected $description = null;
+
     protected function configure() {
         $this
-            ->setName('xchain')
-            ->setDescription('Retrieves info from xchain')
+            ->setName($this->name)
+            ->setDescription($this->description)
 
             ->addArgument(
                 'xchain-url',
@@ -34,27 +37,10 @@ class XChainCommand extends Command {
                 InputArgument::REQUIRED,
                 'An xchain API secret key'
             )
-
-            ->addArgument(
-                'method',
-                InputArgument::REQUIRED,
-                'The XChain Client method to call (asset)'
-            )
-
-
-            ->addOption(
-                'asset',
-                'a',
-                InputOption::VALUE_OPTIONAL,
-                'asset name'
-            )
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output) {
-        $asset_name = $input->getOption('asset');
-        $method = $input->getArgument('method');
-
+    protected function getClient(InputInterface $input) {
         $xchain_url = $input->getArgument('xchain-url');
         $api_token = $input->getArgument('xchain-api-token');
         $api_secret_key = $input->getArgument('xchain-api-secret-key');
@@ -62,19 +48,7 @@ class XChainCommand extends Command {
         // init the client
         $client = new Client($xchain_url, $api_token, $api_secret_key);
 
-
-        switch ($method) {
-            case 'asset':
-                if (!$asset_name) { throw new Exception("Asset name not found", 1); }
-                $output->writeln("<comment>calilng $method $asset_name</comment>");
-                $result = $client->getAsset($asset_name);
-                $output->writeln("<info>Result\n".json_encode($result, 192)."</info>");
-                break;
-            
-            default:
-                break;
-        }
-
+        return $client;
     }
 
 }
