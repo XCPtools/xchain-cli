@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/fd861570a9c3c28d98f418feea1f43f6268bdfa0",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8e6f5732242fe833eb5fd553648924a200e50492",
                 "reference": "fd861570a9c3c28d98f418feea1f43f6268bdfa0",
                 "shasum": ""
             },
@@ -271,7 +271,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/caede1f3361223098395b955bdbf3fe59d58d3ba",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/3f179ebcfc2f9cb82a47e890ed4622f48cfb4602",
                 "reference": "caede1f3361223098395b955bdbf3fe59d58d3ba",
                 "shasum": ""
             },
@@ -362,12 +362,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tokenly/xchain-client.git",
-                "reference": "1aafe8a62e9559dfc7939c456ed9433353ae6ecf"
+                "reference": "9acdb7559306a9d1b053a09530505625e45f81fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tokenly/xchain-client/zipball/1aafe8a62e9559dfc7939c456ed9433353ae6ecf",
-                "reference": "1aafe8a62e9559dfc7939c456ed9433353ae6ecf",
+                "url": "https://api.github.com/repos/tokenly/xchain-client/zipball/9acdb7559306a9d1b053a09530505625e45f81fc",
+                "reference": "9acdb7559306a9d1b053a09530505625e45f81fc",
                 "shasum": ""
             },
             "require": {
@@ -397,7 +397,7 @@
                 }
             ],
             "description": "A library",
-            "time": "2015-08-04 13:57:22"
+            "time": "2015-09-03 02:51:38"
         }
     ],
     "packages-dev": [],
