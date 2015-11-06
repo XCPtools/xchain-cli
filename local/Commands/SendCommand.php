@@ -39,10 +39,16 @@ class SendCommand extends XChainCommand {
                 'Asset'
             )
             ->addOption(
-                'f', 'fee',
+                'fee', 'f',
                 InputOption::VALUE_OPTIONAL,
                 'Fee',
                 0.0001
+            )
+            ->addOption(
+                'account', 'a',
+                InputOption::VALUE_OPTIONAL,
+                'Account to send from',
+                'default'
             )
         ;
     }
@@ -52,13 +58,14 @@ class SendCommand extends XChainCommand {
         $destination = $input->getArgument('destination');
         $quantity = $input->getArgument('quantity');
         $asset = $input->getArgument('asset');
-        $fee = $input->getOption('f');
+        $fee = $input->getOption('fee');
+        $account = $input->getOption('account');
 
         // init the client
         $client = $this->getClient($input);
 
         $output->writeln("<comment>calling sendConfirmed($payment_address_id, $destination, $quantity, $asset, $fee)</comment>");
-        $result = $client->sendConfirmed($payment_address_id, $destination, $quantity, $asset, $fee);
+        $result = $client->sendFromAccount($payment_address_id, $destination, $quantity, $asset, $account, $unconfirmed=false, $fee);
         $output->writeln("<info>Result\n".json_encode($result, 192)."</info>");
     }
 
