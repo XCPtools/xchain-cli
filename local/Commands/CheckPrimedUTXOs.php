@@ -10,9 +10,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Tokenly\XChainClient\Client;
 use \Exception;
 
-class PrimeUTXOs extends XChainCommand {
+class CheckPrimedUTXOs extends XChainCommand {
 
-    protected $name        = 'x:prime';
+    protected $name        = 'x:check-primes';
     protected $description = 'Primes an address with UTXOs';
 
     protected function configure() {
@@ -29,25 +29,12 @@ class PrimeUTXOs extends XChainCommand {
                 InputArgument::REQUIRED,
                 'UTXO size'
             )
-            ->addArgument(
-                'count',
-                InputArgument::REQUIRED,
-                'Number of desired UTXOs'
-            )
-            ->addOption(
-                'fee', 'f',
-                InputOption::VALUE_OPTIONAL,
-                'Fee',
-                0.0001
-            )
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output) {
         $payment_address_id = $input->getArgument('payment-address-id');
         $size               = $input->getArgument('size');
-        $count              = $input->getArgument('count');
-        $fee                = $input->getOption('fee');
 
         // init the client
         $client = $this->getClient($input);
@@ -61,8 +48,8 @@ class PrimeUTXOs extends XChainCommand {
         $btc_balance = $balances['BTC'];
         $output->writeln("<comment>BTC balance is $btc_balance</comment>");
 
-        $output->writeln("<comment>calling primeUTXOs($payment_address_id, $size, $count, $fee)</comment>");
-        $result = $client->primeUTXOs($payment_address_id, $size, $count, $fee);
+        $output->writeln("<comment>calling checkPrimedUTXOs($payment_address_id, $size)</comment>");
+        $result = $client->checkPrimedUTXOs($payment_address_id, $size);
         $output->writeln("<info>Result\n".json_encode($result, 192)."</info>");
     }
 

@@ -272,7 +272,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/0b8376f836901d9562680c27952d58437118e6f7",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/80d3a082194387382ec8f70cf9c5cbc89b7918d2",
                 "reference": "caede1f3361223098395b955bdbf3fe59d58d3ba",
                 "shasum": ""
             },
@@ -363,12 +363,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tokenly/xchain-client.git",
-                "reference": "00444424cf0b1283f581720d0cca1e9cb318cd0a"
+                "reference": "69bc89e20e84e73cd3f4f2532f54ff03ef2bf22c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tokenly/xchain-client/zipball/00444424cf0b1283f581720d0cca1e9cb318cd0a",
-                "reference": "00444424cf0b1283f581720d0cca1e9cb318cd0a",
+                "url": "https://api.github.com/repos/tokenly/xchain-client/zipball/69bc89e20e84e73cd3f4f2532f54ff03ef2bf22c",
+                "reference": "69bc89e20e84e73cd3f4f2532f54ff03ef2bf22c",
                 "shasum": ""
             },
             "require": {
@@ -398,7 +398,7 @@
                 }
             ],
             "description": "A library",
-            "time": "2015-11-13 14:59:28"
+            "time": "2015-11-19 04:50:36"
         }
     ],
     "packages-dev": [],
